@@ -174,3 +174,6 @@ Contributions are welcome. See CONTRIBUTING.md￼.
 
 See SECURITY.md￼ for vulnerability reporting.
 ---
+```bash
+![build](https://github.com/<your-username>/YOLOv8l/actions/workflows/smoke.yml/badge.svg)
+```
