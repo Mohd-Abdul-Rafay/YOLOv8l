@@ -34,7 +34,7 @@ Please follow these guidelines to keep contributions clear and consistent.
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-##📏 Code Style
+## 📏 Code Style
 	•	Follow PEP8￼ for Python.
 	•	Keep notebooks tidy: remove unnecessary outputs before committing.
 	•	Track large binaries (weights, ONNX, TorchScript, etc.) with Git LFS.
