@@ -35,9 +35,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           # Use --extra-index-url so pip checks PyPI (for ultralytics) AND the PyTorch index
+          # Updated torch/torchvision versions to match your Colab env
           pip install \
             "ultralytics==8.3.221" \
-            "torch==2.2.*" "torchvision==0.17.*" \
+            "torch==2.8.*" "torchvision==0.23.*" \
             opencv-python-headless pyyaml pandas numpy matplotlib \
             --extra-index-url https://download.pytorch.org/whl/cpu
 
