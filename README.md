@@ -78,7 +78,7 @@ names: [pedestrian, people, bicycle, car, van, truck, tricycle, awning-tricycle,
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-⚙️ Training Configuration
+## ⚙️ Training Configuration
 
 All hyperparameters are frozen in `args.yaml`.  
 Key parameters:
@@ -95,7 +95,7 @@ Key parameters:
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-📈 Results
+## 📈 Results
 
 Located in `runs/yolov8_training/train/`:
 
@@ -111,7 +111,7 @@ Weights and exports (`best.pt`, `onnx`, `engine`, `torchscript`, etc.) are track
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-🚀 Usage
+## 🚀 Usage
 
 ```bash
 Clone and install
@@ -121,12 +121,12 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Run the notebook
+## Run the notebook
 
 Open YOLOv8l Baseline.ipynb in Colab Pro (High-RAM, A100 GPU) or Jupyter.
 Mount the dataset (via KaggleHub or manually) and run the cells.
 
-Inference
+## Inference
 ```bash
 from ultralytics import YOLO
 model = YOLO("runs/yolov8_training/train/weights/best.pt")
@@ -145,13 +145,13 @@ model.predict(source="path/to/images", imgsz=640, save=True)
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-📜 License
+## 📜 License
 
 Released under the MIT License (see LICENSE￼).
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-📚 Citation
+## 📚 Citation
 
 If you use this repository or report results from it, please cite:
 @software{YOLOv8l_Baseline_2025,
@@ -164,13 +164,13 @@ If you use this repository or report results from it, please cite:
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome. See CONTRIBUTING.md￼.
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-🔒 Security
+## 🔒 Security
 
 See SECURITY.md￼ for vulnerability reporting.
 ---
