@@ -1,6 +1,0 @@
-``` bash
-git lfs install
-git add .gitattributes .gitignore
-git commit -m "Add LFS tracking and ignore rules"
-git push
-```
