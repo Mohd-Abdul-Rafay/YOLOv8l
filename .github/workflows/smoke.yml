@@ -34,8 +34,11 @@ jobs:
       - name: Install minimal CPU dependencies
         run: |
           python -m pip install --upgrade pip
-          # Use --extra-index-url so pip checks PyPI (for ultralytics) AND the PyTorch index
-          # Updated torch/torchvision versions to match your Colab env
+          #
+          # THIS IS THE FIX:
+          # We use --extra-index-url so pip checks PyPI (for ultralytics)
+          # in ADDITION to the PyTorch index (for torch).
+          #
           pip install \
             "ultralytics==8.3.221" \
             "torch==2.8.*" "torchvision==0.23.*" \
