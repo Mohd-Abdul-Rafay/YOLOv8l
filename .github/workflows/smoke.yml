@@ -34,11 +34,12 @@ jobs:
       - name: Install minimal CPU dependencies
         run: |
           python -m pip install --upgrade pip
-          # use CPU wheels to keep CI light
+          # Use --extra-index-url so pip checks PyPI (for ultralytics) AND the PyTorch index
           pip install \
             "ultralytics==8.3.5" \
-            "torch==2.2.*" "torchvision==0.17.*" --index-url https://download.pytorch.org/whl/cpu
-          pip install opencv-python-headless pyyaml pandas numpy matplotlib
+            "torch==2.2.*" "torchvision==0.17.*" \
+            opencv-python-headless pyyaml pandas numpy matplotlib \
+            --extra-index-url https://download.pytorch.org/whl/cpu
 
       - name: Smoke test imports & env
         run: |
