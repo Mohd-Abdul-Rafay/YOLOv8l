@@ -194,7 +194,3 @@ Contributions are welcome. See CONTRIBUTING.md￼.
 
 See SECURITY.md￼ for vulnerability reporting.
 ---
-
-✅ Copy everything above into GitHub’s web editor for `README.md` → Commit → Done.  
-
-Do you also want me to hand you **ready-made boilerplate text** for `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, and `CHANGELOG.md` so the rest of your repo matches this quality?
