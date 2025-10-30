@@ -1,0 +1,64 @@
+# .github/workflows/smoke.yml
+name: smoke
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/*.md'
+      - 'LICENSE'
+      - 'CHANGELOG.md'
+  pull_request:
+    branches: [ main ]
+
+# Cancel stale runs on the same branch
+concurrency:
+  group: smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  import-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install minimal CPU dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # use CPU wheels to keep CI light
+          pip install \
+            "ultralytics==8.3.5" \
+            "torch==2.2.*" "torchvision==0.17.*" --index-url https://download.pytorch.org/whl/cpu
+          pip install opencv-python-headless pyyaml pandas numpy matplotlib
+
+      - name: Smoke test imports & env
+        run: |
+          python - <<'PY'
+          import sys, platform
+          import torch, yaml
+          import ultralytics
+          print("Python:", sys.version)
+          print("OS:", platform.platform())
+          print("Torch:", torch.__version__, "CUDA available:", torch.cuda.is_available())
+          print("Ultralytics:", ultralytics.__version__)
+          # quick YOLO object creation (no training)
+          from ultralytics import YOLO
+          _ = YOLO("yolov8l.pt")  # just ensures weights path/logic resolves (downloads skipped in CI)
+          print("YOLO model class import OK")
+          PY
+
+      - name: List key files
+        run: |
+          ls -la
+          echo
+          echo "Notebook present?"
+          test -f "YOLOv8l Baseline.ipynb" && echo "✅ Found" || echo "⚠️ Not found"
