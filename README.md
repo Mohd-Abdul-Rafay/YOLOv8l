@@ -135,12 +135,13 @@ model.predict(source="path/to/images", imgsz=640, save=True)
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
-🧩 Reproducibility
-	•	Notebook and outputs are preserved exactly.
-	•	Dataset is external via KaggleHub.
-	•	Weights and exports tracked with Git LFS.
-	•	CI workflow (.github/workflows/smoke.yml) validates environment and imports.
-	•	Training confirmed on Colab Pro High-RAM A100 GPU runtime.
+## 🧩 Reproducibility
+
+- Notebook and outputs are preserved exactly.  
+- Dataset is external via KaggleHub.  
+- Weights and exports tracked with Git LFS.  
+- CI workflow (`.github/workflows/smoke.yml`) validates environment and imports.  
+- Training confirmed on **Colab Pro High-RAM A100 GPU runtime**.  
 
 ⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻
 
